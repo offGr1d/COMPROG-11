@@ -51,3 +51,4 @@ public class TestJobApplicants {
     return numSkills >= 3;
         }
 }
+
