@@ -1,0 +1,64 @@
+public class SaleInocentes {
+    // Data Variables
+    private String name;
+    private double sales1;
+    private double sales2;
+    private double sales3;
+
+    // Default constructor
+    public SaleInocentes() {
+        this.name = "";
+        this.sales1 = 0.0;
+        this.sales2 = 0.0;
+        this.sales3 = 0.0;
+    }
+
+    // Constructor with parameters
+    public SaleInocentes(String name, double sales1, double sales2, double sales3) {
+        this.name = name;
+        this.sales1 = sales1;
+        this.sales2 = sales2;
+        this.sales3 = sales3;
+    }
+
+    // Getters and setters for each data field
+    public String getName() {
+        return this.name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSales1() {
+        return this.sales1;
+    }
+    public void setSales1(double sales1) {
+        this.sales1 = sales1;
+    }
+
+    public double getSales2() {
+        return this.sales2;
+    }
+    public void setSales2(double sales2) {
+        this.sales2 = sales2;
+    }
+
+    public double getSales3() {
+        return this.sales3;
+    }
+    public void setSales3(double sales3) {
+        this.sales3 = sales3;
+    }
+
+    // Method to calculate total sales
+    public double TotalSales() {
+        return this.sales1 + this.sales2 + this.sales3;
+    }
+
+    // Method to display info
+    public void displayinfo() {
+        System.out.println("\nSales Data");
+        System.out.printf("%-15s%-15s%-15s%-15s%-15s%n", "Name", "First Sales", "Second Sales", "Third Sales", "Total Sales");
+        System.out.printf("%-15s%-15.2f%-15.2f%-15.2f%-15.2f%n", getName(), getSales1(), getSales2(), getSales3(), TotalSales());
+    }
+}
