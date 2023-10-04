@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class TestSalesInocentes {
+    public static void main(String[] args) {
+        Scanner exams = new Scanner(System.in);
+
+        String name;
+        double s1, s2, s3;
+
+        System.out.print("Enter name: ");
+        name = exams.nextLine();
+
+        System.out.print("Enter first sales: ");
+        s1 = exams.nextDouble();
+        //While loop to check first input sales
+        while (s1 < 0) {
+            System.out.print("Invalid input. Enter first sales: ");
+            s1 = exams.nextDouble();
+        }
+
+        System.out.print("Enter second sales: ");
+        s2 = exams.nextDouble();
+        //While loop to check second input sales
+        while (s2 < 0) {
+            System.out.print("Invalid input. Enter second sales: ");
+            s2 = exams.nextDouble();
+        }
+
+        System.out.print("Enter third sales: ");
+        s3 = exams.nextDouble();
+        //While loop to check third input sales
+        while (s3 < 0) {
+            System.out.print("Invalid input. Enter third sales: ");
+            s3 = exams.nextDouble();
+        }
+
+        SaleInocentes mySales = new SaleInocentes();
+        mySales.setName(name);
+        mySales.setSales1(s1);
+        mySales.setSales2(s2);
+        mySales.setSales3(s3);
+        mySales.displayinfo();
+    }
+}
