@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class TestJobApplicants {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        JobApplicantInocentes[] applicants = new JobApplicantInocentes[5];
+
+        for (int i = 0; i < applicants.length; i++) {
+            System.out.println("Enter data for applicant " + (i + 1) + ":");
+            System.out.print("Name: ");
+            String name = scanner.nextLine();
+            System.out.print("Phone number: ");
+            String phoneNumber = scanner.nextLine();
+            System.out.print("Skilled in word processing (true/false): ");
+            boolean isSkilledInWordProcessing = scanner.nextBoolean();
+            System.out.print("Skilled in spreadsheets (true/false): ");
+            boolean isSkilledInSpreadsheets = scanner.nextBoolean();
+            System.out.print("Skilled in databases (true/false): ");
+            boolean isSkilledInDatabases = scanner.nextBoolean();
+            System.out.print("Skilled in graphics (true/false): ");
+            boolean isSkilledInGraphics = scanner.nextBoolean();
+            scanner.nextLine(); // consume the newline character
+
+            applicants[i] = new JobApplicantInocentes(name, phoneNumber, isSkilledInWordProcessing,
+                    isSkilledInSpreadsheets, isSkilledInDatabases, isSkilledInGraphics);
+        }
+
+        for (JobApplicantInocentes applicant : applicants) {
+            if (isQualified(applicant)) {
+                System.out.println(applicant.getName() + " is qualified for an interview.");
+            } else {
+                System.out.println(applicant.getName() + " is not qualified for an interview.");
+            }
+        }
+    }
+
+    public static boolean isQualified(JobApplicantInocentes applicant) {
+        int numSkills = 0;
+        if (applicant.isSkilledInWordProcessing()) {
+            numSkills++;
+        }
+        if (applicant.isSkilledInSpreadsheets()) {
+            numSkills++;
+        }
+        if (applicant.isSkilledInDatabases()) {
+            numSkills++;
+        }
+        if (applicant.isSkilledInGraphics()) {
+                 numSkills++;
+        }
+    return numSkills >= 3;
+        }
+}
